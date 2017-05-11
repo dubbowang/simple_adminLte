@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>BootstrapOA办公系统</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!--模板主要界面 start-->
     <link rel="stylesheet" href="componet/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="componet/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="componet/dist/css/skins/_all-skins.min.css">
+    <!--模板主要界面 end-->
     <link rel="stylesheet" href="css/index.css">
+
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="js/comments/html5shiv.min.js"></script>
+    <script src="js/comments/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" ng-controller="mainController">
 <div class="wrapper">
-
     <!--头部-->
     <header class="main-header">
         <!-- Logo -->
@@ -175,13 +177,13 @@
                             <li class="user-body">
                                 <div class="row">
                                     <div class="col-xs-4 text-center">
-                                        <a href="#">Followers</a>
+                                        <a href="#">个人信息</a>
                                     </div>
                                     <div class="col-xs-4 text-center">
-                                        <a href="#">Sales</a>
+                                        <a href="#">个人状态</a>
                                     </div>
                                     <div class="col-xs-4 text-center">
-                                        <a href="#">Friends</a>
+                                        <a href="#">我的好友</a>
                                     </div>
                                 </div>
                                 <!-- /.row -->
@@ -189,10 +191,10 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="#" class="btn btn-default btn-flat">个人设置</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="#" class="btn btn-default btn-flat">退出账号</a>
                                 </div>
                             </li>
                         </ul>
@@ -228,8 +230,8 @@
                         </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li class="active"><a href="#"><i class="fa fa-circle-o"></i> 项目列表 v1</a></li>
-                        <li><a href="#"><i class="fa fa-circle-o"></i> 项目列表 v2</a></li>
+                        <li class="active"><a href="#/bookList"><i class="fa fa-circle-o"></i> 项目列表 v1</a></li>
+                        <li><a href="#/bookList2"><i class="fa fa-circle-o"></i> 项目列表 v2</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -237,7 +239,7 @@
                         <i class="fa fa-files-o"></i>
                         <span>资源管理</span>
                         <span class="pull-right-container">
-                          <span class="label label-primary pull-right"></span>
+                          <i class="fa fa-angle-left pull-right"></i>
                         </span>
                     </a>
                     <ul class="treeview-menu">
@@ -258,7 +260,7 @@
         <!-- /.sidebar -->
     </aside>
 
-    <!-- Content Wrapper. Contains page content -->
+    <!--内容-->
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
@@ -270,6 +272,9 @@
                 <li class="active">控制面板</li>
             </ol>
         </section>
+        <section class="content" ng-view>
+            Loading....
+        </section>
     </div>
 
     <!--底部菜单-->
@@ -277,7 +282,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 0.0.1
         </div>
-        <strong>Copyright &copy; 2017-2027 <a href="javascript:;">Premier_Wang@163.com</a>.</strong> 总理出品,必属精品.
+        <strong>Copyright &copy; 2017-2027 <a href="Mailto:Premier_Wang@163.com">Premier_Wang@163.com</a>.</strong> create by premier_wang
     </footer>
 
     <!--动态菜单详情-->
@@ -291,12 +296,19 @@
     <div class="control-sidebar-bg"></div>
 </div>
 
+<!--模板主要界面 start-->
 <script src="componet/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
 <script src="componet/bootstrap/js/bootstrap.min.js"></script>
 <script src="componet/dist/js/app.min.js"></script>
-<!--demo.js 是左侧配置菜单的动态加载Js 如果不要配置页面 可以不加载-->
 <script src="componet/dist/js/demo.js"></script>
+<!--模板主要界面 end-->
+<!--angularJs start-->
+<script src="componet/angularJs/angular/angular.min.js"></script>
+<script src="componet/angularJs/angular-route/angular-route.min.js"></script>
+
 <script src="js/index.js"></script>
+
+<!--注册App-->
+<script src="app/book/bookList.js"></script>
 </body>
 </html>
